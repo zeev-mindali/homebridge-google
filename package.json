@@ -1,0 +1,71 @@
+{
+  "private": false,
+  "name": "homebridge-touchwand-google",
+  "displayName": "Homebridge Google",
+  "version": "0.0.9",
+  "description": "Google Smart Home",
+  "license": "GPL-3.0",
+  "author": "Zeev Mindali <mindalizeev@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/zeev-mindali/homebridge-google"
+  },
+  "bugs": {
+    "url": "https://github.com/zeev-mindali/homebridge-google"
+  },
+  "main": "dist/index.js",
+  "scripts": {
+    "watch": "nodemon",
+    "watch:ui": "npm run start --prefix homebridge-ui/public",
+    "build": "rimraf dist && npm run build:plugin && npm run build:ui",
+    "build:plugin": "tsc",
+    "build:ui": "npm run build --prefix homebridge-ui/public",
+    "lint": "eslint --ext .ts --max-warnings=0 .",
+    "prepublishOnly": "npm run build"
+  },
+  "engines": {
+    "node": ">=10.17.0",
+    "homebridge": ">=1.0.0"
+  },
+  "keywords": [
+    "homebridge-plugin",
+    "google smart home",
+    "google-smart-home",
+    "google home",
+    "google-home",
+    "google assistant",
+    "google-assistant",
+    "google",
+    "android",
+    "homebridge",
+    "touchwand"
+  ],
+  "bundledDependencies": [
+    "@oznu/ws-connect",
+    "fs-extra",
+    "hap-node-client",
+    "rxjs"
+  ],
+  "dependencies": {
+    "@oznu/ws-connect": "^2.2.0",
+    "fs-extra": "^9.0.1",
+    "rxjs": "^6.6.3"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^9.0.2",
+    "@types/node": "^14.11.8",
+    "@types/ws": "^7.2.7",
+    "@typescript-eslint/eslint-plugin": "^4.4.1",
+    "@typescript-eslint/parser": "^4.4.1",
+    "actions-on-google": "^2.13.0",
+    "eslint": "^7.11.0",
+    "hap-node-client": "^0.1.5",
+    "hap-nodejs": "^0.8.2",
+    "homebridge": "^1.3.3",
+    "nodemon": "^2.0.5",
+    "request-promise": "^4.2.6",
+    "rimraf": "^3.0.2",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.0.3"
+  }
+}
